@@ -3,6 +3,9 @@
         <h2>My skills</h2>
     </div>
     <div id="SkillCollapse" class="collapse">
+        <div class="spinner-border" *ngIf="CategoryList.length <= 0" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
         <ul class="container-fluid  d-flex flex-column justify-content-around col">
             <li *ngFor="let Category of CategoryList" class="container-fluid m-2 card">
                 <div class="card-header container-fluid">
@@ -32,6 +35,9 @@
         <h2 >My Educations</h2>
     </div>
     <div id="EducationCollapse" class="collapse col">
+        <div class="spinner-border" *ngIf="EducationList.length <= 0" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
         <ul  class="container-fluid  d-flex flex-column justify-content-around">
             <li *ngFor="let Education of EducationList" class="container-fluid m-2 card">
                 <div class="card-header container-fluid">
@@ -51,6 +57,9 @@
         <h2>My Experiences</h2>
     </div>
     <div id="ExperienceCollapse" class="collapse col">
+        <div class="spinner-border" *ngIf="ExperienceList.length <= 0" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
         <ul class="container-fluid  d-flex flex-column justify-content-around">
             <li *ngFor="let Experience of ExperienceList" class="container-fluid m-2 card">
                 <div class="card-header container-fluid">
