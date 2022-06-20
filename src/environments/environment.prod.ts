@@ -2,4 +2,4 @@ export const environment = {
   production: true
 };
 
-export const ApiFullUrl = "http://212.227.76.126:5000" 
+export const ApiFullUrl = "https://api.portfolio.rialy-pay.com:5003" 
