@@ -1,0 +1,74 @@
+<section class="container-fluid  m-3 d-flex flex-row justify-content-start justify-item-between">
+    <div class="btn btn-outline-dark col-3" data-bs-toggle="collapse" href="#SkillCollapse" role="button" aria-expanded="false" aria-controls="SkillCollapse">
+        <h2>My skills</h2>
+    </div>
+    <div id="SkillCollapse" class="collapse">
+        <ul class="container-fluid  d-flex flex-column justify-content-around col">
+            <li *ngFor="let Category of CategoryList" class="container-fluid m-2 card">
+                <div class="card-header container-fluid">
+                    {{Category.name}}
+                </div>
+                <div class="card-body container-fluid  d-flex flex-column justify-content-around">
+                    <ul>
+                        <li *ngFor="let Skill of Category.relatedSkills" class="container-fluid  d-flex flex-row justify-content-start">
+                            <p>{{Skill.name}} : </p>
+                            <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+                                <div *ngIf="Skill.levelOfExperience > i">
+                                    <fa-icon [icon]="['fas', 'star']"></fa-icon>
+                                </div>
+                                <div *ngIf="Skill.levelOfExperience <= i">
+                                    <fa-icon [icon]="['far', 'star']"></fa-icon>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="container-fluid m-3 d-flex flex-row justify-content-start justify-item-between" >
+    <div class="btn btn-outline-dark col-3" data-bs-toggle="collapse" href="#EducationCollapse" role="button" aria-expanded="false" aria-controls="EducationCollapse">
+        <h2 >My Educations</h2>
+    </div>
+    <div id="EducationCollapse" class="collapse col">
+        <ul  class="container-fluid  d-flex flex-column justify-content-around">
+            <li *ngFor="let Education of EducationList" class="container-fluid m-2 card">
+                <div class="card-header container-fluid">
+                    {{Education.title}}
+                </div>
+                <div class="card-body container-fluid  d-flex flex-column justify-content-around">
+                    <h6>{{Education.school}}</h6>
+                    <div><p>{{Education.startDate}}-{{Education.endDate}}</div>
+                    <p>{{Education.description}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="container-fluid m-3 d-flex flex-row justify-content-start justify-item-between">
+    <div class="btn btn-outline-dark col-3 align-middle" data-bs-toggle="collapse" href="#ExperienceCollapse" role="button" aria-expanded="false" aria-controls="ExperienceCollapse">
+        <h2>My Experiences</h2>
+    </div>
+    <div id="ExperienceCollapse" class="collapse col">
+        <ul class="container-fluid  d-flex flex-column justify-content-around">
+            <li *ngFor="let Experience of ExperienceList" class="container-fluid m-2 card">
+                <div class="card-header container-fluid">
+                    {{Experience.title}}
+                </div>
+                <div class="card-body container-fluid  d-flex flex-column justify-content-around">
+                    <h6>{{Experience.company}}</h6>
+                    <div>{{Experience.startDate}}-{{Experience.endDate}}</div>
+                    <p>{{Experience.description}}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="container-fluid flex-wrap d-flex flex-row justify-content-between"> 
+                        <div *ngFor="let skill of Experience.skills" class="col m-1 align-middle p-1 text-center border border-3 border-dark rounded-pill">
+                            {{skill.name}}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
