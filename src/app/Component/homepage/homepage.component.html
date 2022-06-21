@@ -72,9 +72,9 @@
                     <a *ngIf="Experience.gitLink != null" href="{{Experience.gitLink}}" class="text-body"> <i class="fa-brands fa-git-alt"></i> </a>
                 </div>
                 <div class="card-footer">
-                    <div class="container-fluid flex-wrap d-flex flex-row justify-content-between"> 
+                    <div class="container-fluid flex-wrap d-flex flex-column justify-content-center"> 
                         <div *ngFor="let skill of Experience.skills" class="col m-1 align-middle p-1 text-center border border-3 border-dark rounded-pill">
-                            {{skill.name}}
+                            <p class="text-center align-middle" >{{skill.name}}</p>
                         </div>
                     </div>
                 </div>
